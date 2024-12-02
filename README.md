@@ -1,4 +1,4 @@
-# Mubarak Ibrahim
+# My Resume
 
 📧 **Email**: [mubastudio@gmail.com](mailto:mubastudio@gmail.com)  
 📱 **Phone**: [+234 703 815 4198](tel:+2347038154198)  
