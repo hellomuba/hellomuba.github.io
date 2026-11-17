@@ -43,6 +43,8 @@ The home page includes accessible project filters, reduced-motion support, respo
 - `blog/`: engineering notes and client-side search
 - `assets/*-architecture.svg`: illustrative workflow diagrams, clearly labeled as conceptual
 - `assets/architecture.js`: case-study walkthrough interaction
+- `labs/agent-security.html`: scripted, fully synthetic browser-only access-control design lab (not an executable agent or security test)
+- `assets/portfolio-guide.js`: curated recruiter Q&A with fixed, public-only answers
 
 ## Content boundaries
 
