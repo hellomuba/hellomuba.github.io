@@ -39,8 +39,10 @@ The home page includes accessible project filters, reduced-motion support, respo
 - `index.html`: home page and selected projects
 - `style.css`: global styles, responsive layout, visual components
 - `script.js`: project filters, modal demo playback, motion and navigation
-- `projects/`: standalone engineering case studies
+- `projects/`: standalone engineering case studies and interactive architecture walkthroughs
 - `blog/`: engineering notes and client-side search
+- `assets/*-architecture.svg`: illustrative workflow diagrams, clearly labeled as conceptual
+- `assets/architecture.js`: case-study walkthrough interaction
 
 ## Content boundaries
 
