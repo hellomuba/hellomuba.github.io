@@ -1,24 +1,4 @@
-document.querySelectorAll('[data-filter]').forEach(button=>{button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(item=>{item.classList.toggle('selected',item===button);item.setAttribute('aria-pressed',String(item===button));});document.querySelectorAll('[data-category]').forEach(project=>{project.hidden=button.dataset.filter!=='all'&&project.dataset.category!==button.dataset.filter;});});});
-
-const videoDialog=document.getElementById('video-dialog');
-const videoFrame=document.getElementById('video-frame');
-let videoTrigger=null;
-document.querySelectorAll('[data-video]').forEach(button=>button.addEventListener('click',()=>{
- videoTrigger=button;
- document.getElementById('video-heading').textContent=button.dataset.title;
- document.getElementById('youtube-link').href='https://www.youtube.com/watch?v='+button.dataset.video;
- const iframe=document.createElement('iframe');
- iframe.src='https://www.youtube-nocookie.com/embed/'+button.dataset.video+'?autoplay=1&rel=0';
- iframe.title=button.dataset.title;
- iframe.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
- iframe.allowFullscreen=true;
- iframe.referrerPolicy='strict-origin-when-cross-origin';
- videoFrame.replaceChildren(iframe);
- videoDialog.showModal();document.body.classList.add('video-open');
-}));
-document.getElementById('close-video').addEventListener('click',()=>videoDialog.close());
-videoDialog.addEventListener('click',event=>{if(event.target===videoDialog){const r=videoDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)videoDialog.close();}});
-videoDialog.addEventListener('close',()=>{videoFrame.replaceChildren();document.body.classList.remove('video-open');videoTrigger?.focus();});
+document.querySelectorAll('[data-filter]').forEach(button=>{button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(item=>{item.classList.toggle('selected',item===button);item.setAttribute('aria-pressed',String(item===button));});document.querySelectorAll('[data-category]').forEach(project=>{project.hidden=button.dataset.filter!=='all'&&project.dataset.category!==button.dataset.filter;});const count=[...document.querySelectorAll('[data-category]')].filter(project=>!project.hidden).length;document.getElementById('project-count').textContent=button.dataset.filter==='all'?'Showing all '+count+' projects':'Showing '+count+' '+(count===1?'project':'projects');updateProgress();});});
 
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 if(!reducedMotion.matches&&'IntersectionObserver' in window){
@@ -39,3 +19,9 @@ function closeMenu(){mainNav.classList.remove('mobile-open');menuToggle.setAttri
 menuToggle.addEventListener('click',()=>{const open=menuToggle.getAttribute('aria-expanded')!=='true';menuToggle.setAttribute('aria-expanded',String(open));mainNav.classList.toggle('mobile-open',open);});
 mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&mainNav.classList.contains('mobile-open')){closeMenu();menuToggle.focus();}});
+
+// Keep navigation state consistent across responsive breakpoints and outside clicks.
+window.matchMedia('(min-width: 901px)').addEventListener('change', closeMenu);
+document.addEventListener('click', event => { if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu(); });
+document.querySelectorAll('details').forEach(details => details.addEventListener('toggle', updateProgress));
+if ('ResizeObserver' in window) new ResizeObserver(updateProgress).observe(document.body);

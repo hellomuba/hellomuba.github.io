@@ -12,8 +12,8 @@
   const container=root.querySelector('.guide-questions'),answer=root.querySelector('.guide-answer'),link=root.querySelector('.guide-answer-link');
   const buttons=answers.map((entry,index)=>{
     const button=document.createElement('button');button.type='button';button.className='guide-question';button.textContent=entry.question;button.setAttribute('aria-pressed',String(index===0));container.append(button);
-    button.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===button)));answer.textContent=entry.answer;link.textContent=entry.label+' ↗';link.href=entry.url;link.target=entry.url.startsWith('https://')?'_blank':'_self';link.rel=entry.url.startsWith('https://')?'noopener':'';});
+    button.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===button)));answer.textContent=entry.answer;link.textContent=entry.label;link.href=entry.url;link.target=entry.url.startsWith('https://')?'_blank':'_self';link.rel=entry.url.startsWith('https://')?'noopener':'';});
     return button;
   });
-  answer.textContent=answers[0].answer;link.textContent=answers[0].label+' ↗';link.href=answers[0].url;
+  answer.textContent=answers[0].answer;link.textContent=answers[0].label;link.href=answers[0].url;
 })();

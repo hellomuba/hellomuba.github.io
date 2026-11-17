@@ -84,3 +84,71 @@
 .guide-note{margin-top:auto;padding-top:40px;color:#a7baa5;font-size:11px;line-height:1.75;max-width:440px}
 @media(max-width:850px){.guide-layout{grid-template-columns:1fr}.guide-left{border-right:0;border-bottom:1px solid #495944}.guide-right{min-height:280px}}
 @media(max-width:700px){.guide{padding-top:65px}.guide-left,.guide-right{padding:23px}.guide-answer{font-size:20px}}
+
+/* Evidence-first navigation and responsive case studies. */
+.actions{flex-wrap:wrap}
+button.button{font-family:inherit;border:0;cursor:pointer;align-items:center}
+.quick-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-bottom:32px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#171f18}
+.quick-paths a{padding:22px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.quick-paths a:last-child{border-right:0}
+.quick-paths a:hover{background:#22301d}
+.quick-paths small,.case-next small{font-size:10px;letter-spacing:1.3px;color:var(--accent)}
+.quick-paths strong{font-size:14px;line-height:1.6;font-weight:500}
+.quick-paths strong span{display:inline-block;margin-left:6px}
+.result-count{color:var(--muted);font-size:12px;margin:-14px 0 24px}
+.project-art.visual-art{height:auto;overflow:visible}
+.project-art.visual-art img{height:auto;aspect-ratio:1200/660;object-fit:contain}
+.project:hover .visual-art img{transform:none}
+.visual-caption{position:static;display:block;padding:12px 18px;background:#142018;line-height:1.6}
+.case-nav{display:flex;flex-wrap:wrap;gap:4px 18px;padding:12px 0;margin-top:26px;border-block:1px solid var(--line)}
+.case-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+.case-page .intro{max-width:720px}
+.case-next{display:flex;justify-content:space-between;gap:24px;align-items:center;border-top:1px solid var(--line);padding:28px 0}
+.case-next>a{font-size:14px;line-height:1.7}
+.case-next small,.case-next strong{display:block}
+.case-next strong{font-weight:500;margin-top:6px;color:var(--text)}
+.diagram-open,.diagram-close{background:#26351c;color:var(--accent);border:1px solid #687d51;border-radius:6px;min-height:44px;padding:10px 16px;font:inherit;font-size:13px;cursor:pointer}
+.diagram-open{margin-top:14px}
+.diagram-open[hidden]{display:none}
+.diagram-dialog{width:min(1280px,96vw);max-width:96vw;max-height:94dvh;padding:22px;border:1px solid #687d51;border-radius:12px;background:var(--bg);color:var(--text)}
+.diagram-dialog::backdrop{background:#000d}
+.diagram-dialog p{color:var(--muted);font-size:13px;line-height:1.6}
+.diagram-viewport{overflow:auto;max-height:72dvh;border:1px solid var(--line);border-radius:8px}
+.diagram-viewport img{display:block;width:100%;min-width:960px;height:auto}
+.diagram-viewport:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+body.diagram-opened{overflow:hidden}
+.filters{flex-wrap:wrap}
+.filters button,.arch-step{min-height:44px}
+#close-video{width:44px;height:44px;flex-shrink:0}
+.video-header{gap:16px}
+@media(max-width:900px){
+ header:has(#main-nav){position:relative;flex-wrap:wrap;gap:10px}
+ #main-nav{display:none}
+ .menu-toggle{display:block;margin-left:auto;min-height:44px;border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 12px;border-radius:5px;font:12px 'DM Sans',sans-serif}
+ header #main-nav.mobile-open{display:flex;position:absolute;top:100%;left:0;right:0;z-index:40;background:#171f14;border-bottom:1px solid var(--line);padding:12px 22px;flex-direction:column;gap:0}
+ #main-nav.mobile-open a{min-height:44px;display:flex;align-items:center}
+}
+@media(max-width:700px){
+ .hero h1{font-size:clamp(36px,10.5vw,52px);line-height:1.12;letter-spacing:-1.8px}
+ .hero-break{display:none}
+ .quick-paths{grid-template-columns:1fr}
+ .quick-paths a{border-right:0;border-bottom:1px solid var(--line);padding:18px 20px;gap:6px}
+ .quick-paths a:last-child{border-bottom:0}
+ .hero-grid{margin-bottom:28px}
+ .case-next{align-items:flex-start;flex-direction:column}
+ .case-nav{gap:0 16px}
+ header{height:auto;min-height:75px;padding-block:12px}
+ header>.text-link{font-size:12px;line-height:1.6}
+ .arch-explain{min-height:0}
+ .diagram-dialog{padding:14px}
+ .guide-question{min-height:44px}
+ .hero .eyebrow{line-height:1.7;letter-spacing:.8px}
+ .hero .dot{flex-shrink:0}
+}
+@media print{
+ .reveal,.motion-ready .reveal{opacity:1!important;transform:none!important}
+ .menu-toggle,.scroll-progress,.diagram-open,dialog{display:none!important}
+}
+
+/* Inline vectors keep external-link indicators readable when symbol fonts are unavailable. */
+.link-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}

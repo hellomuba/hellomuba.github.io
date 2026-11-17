@@ -55,3 +55,9 @@ Do not publish employer or client code, API keys, production logs, personal data
 - [LinkedIn](https://linkedin.com/in/mubarak-ibrahim1)
 - [GitHub](https://github.com/hellomuba)
 - [Email](mailto:mubastudio@gmail.com)
+
+### Validation and review
+
+Run `python3 scripts/check_site.py` (requires Python 3 and Node.js) to check the local page graph, fragments, image descriptions, SVG files and JavaScript syntax.
+
+The [November 2026 portfolio review](docs/portfolio-review-2026-11-17.md) records the comparison, implemented improvements, browser checks, limitations, and desktop/mobile screenshots. Shared video behavior is in `assets/video.js`; diagram enlargement is in `assets/diagram.js`.
