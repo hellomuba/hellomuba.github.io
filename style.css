@@ -67,3 +67,20 @@
 .arch-explain{color:#c9d6c4;font-size:14px;line-height:1.8;min-height:51px;margin:20px 0 0}
 @media(max-width:700px){.project-art.visual-art{height:220px}.visual-caption{font-size:8px;letter-spacing:.6px}.arch-walkthrough{padding:18px}.arch-step{font-size:11px;padding:10px 12px}}
 @media(prefers-reduced-motion:reduce){.project:hover .visual-art img{transform:none}}
+
+/* Curated recruiter FAQ, deliberately distinct from a generative chatbot */
+.guide{padding-top:105px}
+.guide-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid #495944;border-radius:13px;background:#171e18;overflow:hidden;margin-top:30px}
+.guide-left,.guide-right{padding:30px}
+.guide-left{border-right:1px solid #495944}
+.guide-label{color:#a3b99b;font-size:10px;font-weight:700;letter-spacing:1.3px;margin-bottom:20px}
+.guide-questions{display:grid;gap:9px}
+.guide-question{background:transparent;border:1px solid #40503d;color:#d2ddd0;border-radius:7px;font:500 13px 'DM Sans',sans-serif;cursor:pointer;padding:15px 17px;text-align:left}
+.guide-question:hover{border-color:#a8d777}
+.guide-question[aria-pressed=true]{color:#19231a;background:var(--accent);border-color:var(--accent)}
+.guide-right{display:flex;flex-direction:column;min-height:340px;background:radial-gradient(ellipse at 85% 20%,#a6de6020,transparent 55%),#1c291e}
+.guide-answer{font:400 clamp(18px,2.1vw,25px)/1.55 'Space Grotesk',sans-serif;color:#f1f8eb;margin:10px 0 24px}
+.guide-answer-link{color:var(--accent);font-size:13px;font-weight:600;align-self:flex-start;border-bottom:1px solid #799b66;padding-bottom:8px}
+.guide-note{margin-top:auto;padding-top:40px;color:#a7baa5;font-size:11px;line-height:1.75;max-width:440px}
+@media(max-width:850px){.guide-layout{grid-template-columns:1fr}.guide-left{border-right:0;border-bottom:1px solid #495944}.guide-right{min-height:280px}}
+@media(max-width:700px){.guide{padding-top:65px}.guide-left,.guide-right{padding:23px}.guide-answer{font-size:20px}}
