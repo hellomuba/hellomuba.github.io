@@ -23,7 +23,7 @@ videoDialog.addEventListener('close',()=>{videoFrame.replaceChildren();document.
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 if(!reducedMotion.matches&&'IntersectionObserver' in window){
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}}),{threshold:.08});
- document.querySelectorAll('.section-head,.project,.approach-grid,.stack,.timeline>div,.credentials,.freelance,.contact').forEach((el,index)=>{el.classList.add('reveal');el.style.setProperty('--reveal-delay',String(index%2*70)+'ms');observer.observe(el);});
+ document.querySelectorAll('.section-head,.project,.approach-grid,.stack,.timeline>div,.credentials,.freelance,.contact,.opensource-panel,.writing-card').forEach((el,index)=>{el.classList.add('reveal');el.style.setProperty('--reveal-delay',String(index%2*70)+'ms');observer.observe(el);});
  document.documentElement.classList.add('motion-ready');
  reducedMotion.addEventListener('change',event=>{if(event.matches)document.documentElement.classList.remove('motion-ready');});
 }
