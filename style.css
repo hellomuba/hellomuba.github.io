@@ -48,3 +48,22 @@
 @media(max-width:850px){header nav{gap:15px;font-size:12px}.opensource-panel{grid-template-columns:1fr}.trust-visual{max-width:680px}.writing-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.opensource,.writing{padding-top:65px}.opensource-panel{padding:23px;gap:25px;border-radius:11px}.opensource-copy h3{font-size:45px}.trust-diagram{padding:20px}.writing-grid{grid-template-columns:1fr;gap:14px}.writing-card{min-height:auto}.writing-card h3{font-size:23px}.oss-actions{align-items:start;flex-direction:column}.writing-card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.writing-card:hover{transform:none}}
+
+/* Distinct project-system illustrations and interactive case-study walkthroughs */
+.project-art.visual-art{height:285px;padding:0;background:#121e17;overflow:hidden}
+.project-art.visual-art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.project-art.visual-art:after{display:none}
+.project:hover .visual-art img{transform:scale(1.035)}
+.visual-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#08100be8);padding:38px 18px 15px;color:#d3e4d1;font-size:9px;font-weight:700;letter-spacing:1.1px;text-shadow:0 1px 5px #000}
+.case-visual{margin:32px 0 22px}
+.case-visual img{display:block;width:100%;height:auto;aspect-ratio:1200/660;object-fit:cover;border-radius:13px;border:1px solid #475947;background:#121b14}
+.case-visual figcaption{color:#a8b5a4;font-size:12px;line-height:1.6;margin-top:12px}
+.arch-walkthrough{border:1px solid #40513e;border-radius:11px;padding:23px 25px;margin:25px 0 34px;background:linear-gradient(135deg,#1d281e,#151b16)}
+.arch-walkthrough h2{font-size:20px;letter-spacing:-.5px;margin:0 0 20px}
+.arch-steps{display:flex;gap:8px;flex-wrap:wrap}
+.arch-step{font:500 12px 'DM Sans',sans-serif;cursor:pointer;padding:11px 15px;border-radius:30px;border:1px solid #566d4f;color:#cad5c3;background:#182219;transition:background .2s,border-color .2s}
+.arch-step:hover{border-color:#9bc76e}
+.arch-step.active,.arch-step[aria-pressed=true]{border-color:var(--accent);background:var(--accent);color:#1b2518}
+.arch-explain{color:#c9d6c4;font-size:14px;line-height:1.8;min-height:51px;margin:20px 0 0}
+@media(max-width:700px){.project-art.visual-art{height:220px}.visual-caption{font-size:8px;letter-spacing:.6px}.arch-walkthrough{padding:18px}.arch-step{font-size:11px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.project:hover .visual-art img{transform:none}}
